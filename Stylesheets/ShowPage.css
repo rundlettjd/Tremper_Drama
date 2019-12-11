@@ -1,0 +1,173 @@
+.top{
+    margin-top: 8rem;
+}
+.title{
+    color: black;
+    margin-top: 1.563rem;
+}
+.title h1{
+    font-size: 4.063rem;
+    font-weight: bold;
+}
+.title h2{
+    font-size: 1.375rem;
+    font-weight: bold;
+}
+.performance-info{
+    margin-top: 0.625rem;
+    color: black;
+    font-size: 1.25rem;
+    line-height: 0.5rem;
+}
+.synopsis{
+    color:black;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+.awards{
+    font-size: 1.563rem;
+    height: 100%;
+    margin-top: 1.875rem;
+    color: black;
+}
+.acting-award{
+    list-style-type: none;
+    line-height: 1.7rem;
+}
+.scenes{
+    font-size: 1.563rem;
+    height: 100%;
+    margin-top: 1.875rem;
+    color: black;
+}
+.scene-playwright{
+    list-style-type: none;
+    line-height: 1.7rem;
+}
+.promo-video{
+    margin-top:0.938rem;
+    color: black;
+}
+.promo-video h1{
+    font-weight: bold;
+}
+.small-promo-video{
+    display: none;
+}
+.headshot-credit{
+    font-size: 1.875rem;
+    color: black;
+    text-transform: uppercase;
+    margin-top: 1.563rem;
+}
+.headshot-row{
+    margin-bottom:2rem;
+}
+.headshot-title{
+    font-size: 1.219rem;
+    line-height: 2.188rem;
+}
+.tooltip-inner{
+    max-width: 340px;
+    line-height: 1rem;
+}
+
+.cast{
+    font-size: 1.563rem;
+    color: black;
+}
+.cast h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.813rem;
+}
+.chorus{
+    text-align: center;
+}
+ul.chorus{
+    list-style: none;
+}
+.chorus p{
+    margin: 0;
+}
+.chorus li{
+    line-height: 1.75rem;
+}
+ul.leaders {
+    max-width: 37em;
+    padding: 0;
+    overflow-x: hidden;
+    list-style: none;
+}
+ul.leaders li:before {
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    color: black;
+    content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+}   
+ul.leaders span:first-child {
+    background: white;
+    padding-right: 0.33rem;
+}    
+ul.leaders span+span {
+    padding-left: 0.33rem;
+    float: right;
+    background: white;
+}
+
+@media (max-width:1200px){
+    .top{
+        margin-top:4rem;
+    }
+    .title h1{
+        font-size: 2.75rem;
+    }
+    .performance-info{
+        margin-bottom: 1.5rem;
+    }
+    .performance-info p{
+        line-height: 1.25rem;
+        margin-bottom: 0.25;
+    }
+    .performance-info p b{
+        display: block;
+    }
+    .synopsis b{
+        display: block;
+        text-align: center;
+    }
+    .awards-title{
+        text-align: center;
+        font-weight: bold;
+    }
+    .acting-award{
+        padding-left: 2.1rem;
+    }
+    .awards ul{
+        list-style-position: inside;
+    }
+    .scenes ul{
+        list-style-position: inside;
+        font-size: 1.1rem;
+    }
+    .scene-playwright{
+        padding-left: 1.6rem;
+    }
+    .promo-video h1{
+        font-size: 2rem;
+    }
+    .lg-promo-video{
+        display: none;
+    }
+    .small-promo-video{
+        display: block;
+        text-align: center;
+    }
+    .cast{
+        font-size: .75rem;
+    }
+    .chorus li{
+        line-height: 1rem;
+    }
+}

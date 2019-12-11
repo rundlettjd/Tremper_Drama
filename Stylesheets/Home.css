@@ -1,0 +1,258 @@
+.banner img{
+    margin-top: 4.875rem;
+    width: 100%;
+}
+.season-title{
+    font-size: 2.063rem;
+    margin-top: 4.688rem;
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2.813rem;
+}
+.season-posters{
+    position: relative;
+    margin-bottom: 6.25rem;
+}
+.poster-tile{
+    background-color: #406AAD;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.poster-caption{
+    /* position: absolute; */
+    position: relative;
+    bottom: 0;
+    /* width: 12.5rem; */
+    width: 18.75rem;
+    height: 6.25rem;
+    font-size: 0.938rem;
+    color: #DEE0E2;
+    /* background-color: #406AAD; */
+    padding: 0.75rem 0.5rem;
+    line-height: 1rem;
+    text-align: center;
+    margin-top:1rem;
+}
+.poster-title{
+    position: absolute;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 18.75rem;
+    top: 1.25rem;
+    color: white;
+}
+.about-row{
+    display: table;
+}
+.about-title{
+    width: 40%;
+    background-color: #0035AD;
+    color: white;
+    text-align: right;
+    font-size: 3.125rem;
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 1.563rem;
+}
+.about-description{
+    width: 60%;
+    display: table-cell;
+    padding-left: 1.25rem;
+    padding-right: 18rem;
+    font-size: 1.25rem;
+    line-height: 1.438rem;
+}
+.about-description a{
+    text-decoration: underline;
+}
+.member-row{
+    display: table;
+    margin-top: 1.25rem;
+}
+.member-description{
+    width: 40%;
+    display: table-cell;
+    font-size: 1.875rem;
+    vertical-align: middle;
+    line-height: 2.188rem;
+    padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+}
+.member-description p{
+    margin: auto;
+}
+.member-title{
+    width: 60%;
+    display: table-cell;
+    background-color: #0035AD;
+}
+.member-title img{
+    padding: 0.625rem;
+}
+.member-title-text{
+    font-size: 3.125rem;
+    color: white;
+}
+.small-member-title{
+    display: none;
+}
+.past-production-block{
+    display: table;
+}
+.past-production-row{
+    margin-top: 4.688rem;
+}
+.past-production-title{
+    font-size: 2.063rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+}
+.past-production-viewall{
+    text-align: right;
+    font-size: 1.375rem;
+}
+.past-production-viewall a{
+    border: 1px black solid;
+    padding: 0.188rem;
+    color: black;
+    text-decoration: none;
+}
+.past-production-viewall a:hover{
+    background-color: lightblue;
+}
+.past-posters{
+    margin-top: 1.875rem;
+}
+.past-poster-caption{
+    position: absolute;
+    bottom: 1.25rem;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 300px;
+    line-height: 1.875rem;
+    color: white;
+}
+.fundraiser-title{
+    font-size: 2.063rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 3.125rem;
+    color: black;
+}
+.fundraiser-description{
+    text-align: center;
+    font-size: 2.813rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.fundraiser-description a{
+    color: #0000EE;
+}
+.sponsor-title{
+    font-size: 2.063rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    margin-top: 3.125rem;
+}
+.sponsor-row{
+    display: table;
+    margin-top: 2.5rem;
+    width: 100%;
+}
+.sponsor{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 30%;
+    text-align: center;
+}
+.sponsor a{
+    color: black;
+}
+.small-season-posters{
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+}
+@media (max-width: 1200px){
+    .banner img{
+        margin-top: 2.5rem;
+    }
+    .season-title{
+        text-align: center;
+    }
+    .small-season-posters{
+        text-align: center;
+        display: block;
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+    .about-title{
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-right: 0rem;
+        padding-right: -1.563rem;
+    }
+    .about-description{
+        display: block;
+        width: 100%;
+        padding: 0rem;
+    }
+    .about-description p{
+        padding: 1rem;
+        width: 100%;
+    }
+    .member-title{
+        display: none;
+    }
+    .small-member-title{
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+        background-color: #0035AD;
+        color: white;
+    }
+    .member-description{
+        width: 100%;
+        display: block;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        padding-top: 0rem;
+    }
+    .past-production-viewall{
+        width: 100%;
+        text-align: left;
+    }
+    .past-posters{
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+    }
+    .fundraiser-title{
+        width: 100%;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .fundraiser-description{
+        width: 100%;
+        font-size: 1.25rem;
+    }
+    .sponsor-title{
+        display: none;
+    }
+    .sponsor-row{
+        display:none;
+    }
+    .bottom-block{
+        margin-bottom: 10rem;
+    }
+}

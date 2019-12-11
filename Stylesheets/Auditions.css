@@ -1,0 +1,81 @@
+.top-banner{
+    margin-top: 6.25rem;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+}
+.title{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.showtitle{
+    text-align: center;
+    margin-top: 3.125rem;
+}
+.showtitle h1{
+    font-weight: bold;
+    line-height: 1rem;
+}
+.showtitle h2{
+    font-size: 1.375rem;
+    font-weight: bold;
+    line-height: 1rem;
+padding-top: 1rem;
+}
+.performance-info{
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.563rem;
+    margin-top: 3.125rem;
+}
+.synopsis{
+    font-size: 1.25rem;
+    line-height: 1.563rem;
+    margin-top: 3.125rem;
+}
+.audition-info{
+    font-size: 1.25rem;
+    line-height: 1.563rem;
+    margin-top: 3.125rem;
+}
+.audition-info a{
+    color: #0000EE;
+    text-decoration: underline;
+    margin-right: .25rem;
+}
+.character-info{
+    font-size: 1.25rem;
+    line-height: 1.563rem;
+}
+.characters{
+    font-size: 1.25rem;
+    line-height: 1.563rem;
+    margin-left: 5rem;
+}
+.rehearsal-info{
+    font-size: 1.25rem;
+    line-height: 1.563rem;
+    margin-top: 3.125rem;
+}
+@media (max-width: 1200px){
+    .characters{
+        margin-left: 0;
+    }
+    .audition-dates{
+        text-align: center;
+    }
+    .audition-location{
+        text-align: center;
+    }
+    .audition-info b{
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .audition-info a{
+        display: block;
+    }
+    .rehearsal-info{
+        margin-bottom: 3rem;
+    }
+}

@@ -1,0 +1,10 @@
+.Ad{
+    margin-top: 9.375rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+.Ad a{
+    display: block;
+    color: #0000EE;
+    text-decoration: underline;
+}

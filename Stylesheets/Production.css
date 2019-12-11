@@ -1,0 +1,103 @@
+/* .sidenav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 4.875rem;
+    transition: 0.5s;
+} */
+.top{
+    margin-top: 5.875rem;
+}
+.sidenav-title{
+    font-size: 1.875rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.sidenav ul{
+    list-style-type: none;
+}
+.sidenav ul li a{
+    text-decoration: none;
+    color: #BFBFBF;
+    font-size: 1.563rem;
+    font-family: "Lucida Console", Times, serif;
+}
+.sidenav ul li a:hover{
+    color: black;
+}
+.sidenav .active{
+    color: black;
+}
+.row-top{
+    margin-top: 2rem;
+}
+.small-sidenav-title h1{
+    display: none;
+    font-size: 1.875rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-align: center;
+    margin: auto;
+}
+.small-sidenav{
+    display: none;
+}
+.missing-title{
+    position: absolute;
+    bottom: 1.25rem;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 300px;
+    line-height: 1.875rem;
+    color:white;
+}
+@media (max-width: 1200px){
+    .row img{
+        margin-bottom: 1rem;
+    }
+    .sidenav{
+        display: none;
+    }
+    /* .small-sidenav-title h1{
+        display: block;
+        font-size: 1.5rem;
+    }
+    .small-sidenav{
+        display:inline-block;
+    }
+    .small-sidenav ul{
+        font-size: 1rem;
+        list-style-type: none;
+    }
+    .small-sidenav a{
+        text-decoration: none;
+    color: #BFBFBF;
+    font-family: "Lucida Console", Times, serif;
+    display: inline-block;
+    } */
+    .small-sidenav{
+        display: block;
+        text-decoration: none;
+        color: #BFBFBF;
+        font-size: 1.563rem;
+        font-family: "Lucida Console", Times, serif;
+        margin-bottom: 2rem;
+    }
+    .small-sidenav a{
+        color: #BFBFBF;
+    }
+    .small-sidenav a.active{
+        color: black;
+    }
+    .small-sidenav-title{
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+    .top{
+        margin-top: 3rem;
+    }
+}
