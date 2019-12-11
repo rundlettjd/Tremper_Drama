@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tremper Theatre Program </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="http://tremperdrama.com">
+  <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+  <link rel="javascript" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js">
+  <link rel="javascript" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js.map">
+  <link rel="javascript" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js">
+  <link rel="javascript" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js.map"> -->
+  <link rel="stylesheet" type="text/css" href="/Stylesheets/Tremper.css">
+  <link rel="stylesheet" type="text/css" href="/Stylesheets/ShowPage.css">
+  <link rel="shortcut icon" href="/Images/SiteWide/favicon.ico" />
+</head>
+<style>
+  .rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  .rotate180 {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  .rotate270 {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+
+  .img {
+    image-orientation: from-image;
+  }
+
+  .row>.column {
+    padding: 0 8px;
+    /* margin-left: 1rem;
+  margin-right: 1rem; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    max-width: 25%;
+    text-align: center;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Create four equal columns that floats next to eachother */
+  .column {
+    float: left;
+    width: 400px;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    /* background-color: #fefefe; */
+    background-color: black;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    /* height: 80%; */
+    max-width: 1200px;
+    /* max-height: 900px; */
+    align-content: center;
+  }
+
+  /* The Close Button */
+  .close {
+    color: white;
+    position: absolute;
+    top: 85px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Hide the slides by default */
+  .mySlides {
+    display: none;
+    text-align: center;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #0035AD;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(70, 64, 64, 0.8);
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* Caption text */
+  .caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+    position: relative;
+  }
+
+  img.demo {
+    opacity: 0.6;
+  }
+
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  img.hover-shadow {
+    transition: 0.3s;
+  }
+
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+</style>
+
+<body>
+  <nav class="navbar fixed-top navbar-default navbar-toggleable-md navbar-expand-md navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+      aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggle">
+      <a href="Home.html" class="navbar-brand">Tremper Theatre Program</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="Calendar.html">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Auditions.html">Auditions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="TicketInfo.html">Ticket Info</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="AlumniMap.html">Alumni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Productions/2017-2018/2017-2018.html">Past Productions</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="title text-center" style="margin-top: 7rem;">
+		<h1>The Christians</h1>
+		<h2>By Lucas Hnath</h2>
+	</div>
+
+  <div class="row">
+    <div class="column" style="width:25%;">
+      <img src="/Images/ProductionGallery/2017-2018/TheChristians/1.JPG" onclick="openModal();currentSlide(1)"
+        width="270px" height="180px" class="hover-shadow" alt="caption 1">
+    </div>
+    <div class="column">
+      <img class="rotate270" src="/Images/ProductionGallery/2017-2018/TheChristians/2.JPG"
+        onclick="openModal();currentSlide(2)" width="270px" height="180px" class="hover-shadow" alt="caption 2">
+    </div>
+    <div class="column">
+      <img src="/Images/ProductionGallery/2017-2018/TheChristians/2_5.JPG" onclick="openModal();currentSlide(3)"
+        width="270px" height="180px" class="hover-shadow" alt="caption 3">
+    </div>
+    <div class="column">
+      <img src="/Images/ProductionGallery/2017-2018/TheChristians/3.JPG" onclick="openModal();currentSlide(4)"
+        width="270px" height="180px" class="hover-shadow" alt="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="/Images/ProductionGallery/2017-2018/TheChristians/4.JPG" onclick="openModal();currentSlide(5)"
+        width="270px" height="180px" class="hover-shadow" alt="caption 1">
+    </div>
+    <div class="column">
+      <img src="/Images/ProductionGallery/2017-2018/TheChristians/5.JPG" onclick="openModal();currentSlide(6)"
+        width="270px" height="180px" class="hover-shadow" alt="caption 2">
+    </div>
+    <div class="column">
+      <img class="rotate270" src="/Images/ProductionGallery/2017-2018/TheChristians/6.JPG"
+        onclick="openModal();currentSlide(7)" width="270px" height="180px" class="hover-shadow" alt="caption 3">
+    </div>
+    <div class="column">
+      <img src="/Images/ProductionGallery/2017-2018/TheChristians/7.JPG" onclick="openModal();currentSlide(8)"
+        width="270px" height="180px" class="hover-shadow" alt="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="/Images/ProductionGallery/2017-2018/TheChristians/8.JPG" onclick="openModal();currentSlide(9)"
+        width="270px" height="180px" class="hover-shadow" alt="caption 1">
+    </div>
+    <div class="column">
+      <img class="rotate270" src="/Images/ProductionGallery/2017-2018/TheChristians/9.JPG"
+        onclick="openModal();currentSlide(10)" width="270px" height="180px" class="hover-shadow" alt="caption 2">
+    </div>
+    <div class="column">
+      <img src="/Images/ProductionGallery/2017-2018/TheChristians/10.JPG" onclick="openModal();currentSlide(11)"
+        width="270px" height="180px" class="hover-shadow" alt="caption 3">
+    </div>
+    <div class="column">
+      <img src="/Images/ProductionGallery/2017-2018/TheChristians/11.JPG" onclick="openModal();currentSlide(12)"
+        width="270px" height="180px" class="hover-shadow" alt="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img class="rotate270" src="/Images/ProductionGallery/2017-2018/TheChristians/12.JPG"
+        onclick="openModal();currentSlide(13)" width="270px" height="180px" class="hover-shadow" alt="caption 1">
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;
+    </span>
+    <div class="modal-content">
+      <div class="mySlides">
+        <div class="numbertext">1/13</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/1.JPG" style="width:60%; height:60%;">
+        <div class="caption-container">
+          <p id="caption">The Choir (Arica Bauer, Corinne Springer, Rebecca St. Ange, Rebecca Keller, Troy Keller, Faith Wrycha, and Trent Springer)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">2/13</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/2.JPG"
+          style="width:60%; height: 60%; transform: rotate(270deg);">
+        <div class="caption-container" style="margin-top: 5rem;">
+          <p id="caption">Mikey Kok (as Pastor Paul)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">3/13</div>
+        <img style="width:60%; height:60%;" src="/Images/ProductionGallery/2017-2018/TheChristians/2_5.JPG">
+        <div class="caption-container">
+          <p id="caption">Mikey Kok (as Pastor Paul)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">4/13</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/3.JPG" style="width:60%; height:60%;">
+        <div class="caption-container">
+          <p id="caption">Sam Kuchta (as Associate Pastor Joshua) and Mikey Kok (as Pastor Paul)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">5/13</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/4.JPG" style="width:60%; height:60%;">
+        <div class="caption-container">
+          <p id="caption">Sam Kuchta (as Associate Pastor Joshua) and Mikey Kok (as Pastor Paul)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">6/13</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/5.JPG" style="width:60%; height:60%;">
+        <div class="caption-container">
+          <p id="caption">Sam Kuchta (as Associate Pastor Joshua)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">7/13</div>
+        <img class="rotate270" src="/Images/ProductionGallery/2017-2018/TheChristians/6.JPG" style="width:60%; height:60%; margin-top: 10rem;">
+        <div class="caption-container" style="margin-top: 10rem;">
+          <p id="caption">Jarod Sturycz (as Elder Jay)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">8/13</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/7.JPG" style="width:60%; height:60%;">
+        <div class="caption-container">
+          <p id="caption">Corinne Springer (as Jenny)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">9/13</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/8.JPG" style="width:60%; height:60%;">
+        <div class="caption-container">
+          <p id="caption">Corinne Springer (as Jenny)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">10/13</div>
+        <img class="rotate270" src="/Images/ProductionGallery/2017-2018/TheChristians/9.JPG" style="width:60%; height:60%; margin-top: 10rem;">
+        <div class="caption-container" style="margin-top: 10rem;">
+          <p id="caption">Erin Dillon (as Elizabeth)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">11/13</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/10.JPG" style="width:60%; height:60%;">
+        <div class="caption-container">
+          <p id="caption">Erin Dillon (as Elizabeth) and Mikey Kok (as Pastor Paul)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">12/13</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/11.JPG" style="width:60%; height:60%;">
+        <div class="caption-container">
+          <p id="caption">Mikey Kok (as Pastor Paul) and Sam Kuchta (as Associate Pastor Joshua)</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">13/13</div>
+        <img class="rotate270" src="/Images/ProductionGallery/2017-2018/TheChristians/12.JPG" style="width:60%; height:60%; margin-top: 10rem;">
+        <div class="caption-container" style="margin-top: 10rem;">
+          <p id="caption">Mikey Kok (as Pastor Paul)</p>
+        </div>
+      </div>
+    </div>
+    <a class="prev" style="color: white;" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" style="color: white;" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+  <footer class="footer">
+    <div class="container text-center d-block">
+      <span class="small-footer">Follow us:
+        <img width="20px" height="20px" src="/Images/SiteWide/SocialMedia/Twitter.png">
+        <a target="_blank" href="https://twitter.com/TremperDrama120?lang=en">Twitter</a>
+        <img width="20px" height="20px" src="/Images/SiteWide/SocialMedia/Instagram.jpg">
+        <a target="_blank" href="https://www.instagram.com/tremperdrama120/?hl=en">Instagram</a>
+      </span>
+      <span class="small-footer">
+        <img width="20px" height="20px" src="/Images/SiteWide/SocialMedia/Facebook.png">
+        <a target="_blank" href="https://www.facebook.com/groups/202198139818767/">Facebook</a>
+        <img width="20px" height="20px" src="/Images/SiteWide/SocialMedia/Youtube.png">
+        <a target="_blank" href="https://www.youtube.com/channel/UCMpBwFJJvAgEIfaAuNWQKUw">Youtube</a>
+      </span>
+      <span class="small-footer">
+        <img width="20px" height="20px" src="/Images/SiteWide/SocialMedia/Snapchat.jpg">
+        <span>Snapchat - TremperDrama</span>
+      </span>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      //var dots = document.getElementsByClassName("demo");
+      // var captionText = document.getElementById("caption");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      // for(i=0; i < dots.length; i++){
+      //   dots[i].className = dots[i].className.replace(" active", "");
+      // }
+      slides[slideIndex - 1].style.display = "block";
+      //dots[slideIndex-1].className += " active";
+      // captionText.innerHTML = this.alt;
+    }
+  </script>
+</body>
+
+</html>
