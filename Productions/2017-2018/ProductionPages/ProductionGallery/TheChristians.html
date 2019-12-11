@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tremper Theatre Program </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="http://tremperdrama.com">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+  <link rel="javascript" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js">
+  <link rel="javascript" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js.map">
+  <link rel="javascript" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js">
+  <link rel="javascript" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js.map"> -->
+  <link rel="stylesheet" type="text/css" href="/Stylesheets/Tremper.css">
+  <link rel="shortcut icon" href="/Images/SiteWide/favicon.ico" />
+</head>
+<style>
+.row > .column {
+  padding: 0 8px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  /* background-color: #fefefe; */
+  background-color: black;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 85px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+  position: relative;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+<body>
+  <nav class="navbar fixed-top navbar-default navbar-toggleable-md navbar-expand-md navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggle">
+      <a href="Home.html" class="navbar-brand">Tremper Theatre Program</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="Calendar.html">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Auditions.html">Auditions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="TicketInfo.html">Ticket Info</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="AlumniMap.html">Alumni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Productions/2017-2018/2017-2018.html">Past Productions</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row" style="margin-top: 8rem;">
+    <div class="column">
+      <img src="/Images/ProductionGallery/TheChristians/1.JPG" onclick="openModal();currentSlide(1)" width="300px" height="300px" class="hover-shadow" alt="caption 1">
+    </div>
+    <div class="column">
+      <img src="/Images/ProductionGallery/TheChristians/2.JPG" onclick="openModal();currentSlide(2)" width="300px" height="300px" class="hover-shadow" alt="caption 2">
+    </div>
+    <div class="column">
+      <img src="/Images/ProductionGallery/TheChristians/3.JPG" onclick="openModal();currentSlide(3)" width="300px" height="300px" class="hover-shadow" alt="caption 3">
+    </div>
+    <div class="column">
+      <img src="/Images/ProductionGallery/TheChristians/4.JPG" onclick="openModal();currentSlide(4)" width="300px" height="300px" class="hover-shadow" alt="caption 4">
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;
+    </span>
+    <div class="modal-content">
+      <div class="mySlides">
+        <div class="numbertext">1/4</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/1.JPG" style="width:100%; height:100%;">
+        <div class="caption-container">
+          <p id="caption">caption 1</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">2/4</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/2.JPG" style="width:100%; height: 100%; transform: rotate(270deg);">
+        <div class="caption-container" style="margin-top: 10rem;">
+          <p id="caption">caption 2</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">3/4</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/2_5.JPG" style="width:100%; height: 100%;">
+        <div class="caption-container">
+          <p id="caption">caption 3</p>
+        </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">4/4</div>
+        <img src="/Images/ProductionGallery/2017-2018/TheChristians/3.JPG" style="width:100%; height: 100%;">
+        <div class="caption-container">
+          <p id="caption">caption 4</p>
+        </div>
+      </div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+  </div>
+  <footer class="footer">
+    <div class="container text-center d-block">
+      <span class="small-footer">Follow us:
+        <img width="20px" height="20px" src="/Images/SiteWide/SocialMedia/Twitter.png">
+        <a target="_blank" href="https://twitter.com/TremperDrama120?lang=en">Twitter</a>
+        <img width="20px" height="20px" src="/Images/SiteWide/SocialMedia/Instagram.jpg">
+        <a target="_blank" href="https://www.instagram.com/tremperdrama120/?hl=en">Instagram</a>
+      </span>
+      <span class="small-footer">
+        <img width="20px" height="20px" src="/Images/SiteWide/SocialMedia/Facebook.png">
+        <a target="_blank" href="https://www.facebook.com/groups/202198139818767/">Facebook</a>
+        <img width="20px" height="20px" src="/Images/SiteWide/SocialMedia/Youtube.png">
+        <a target="_blank" href="https://www.youtube.com/channel/UCMpBwFJJvAgEIfaAuNWQKUw">Youtube</a>
+      </span>
+      <span class="small-footer">
+        <img width="20px" height="20px" src="/Images/SiteWide/SocialMedia/Snapchat.jpg">
+        <span>Snapchat - TremperDrama</span>
+      </span>
+    </div>
+  </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    function openModal(){
+      document.getElementById("myModal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+    
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n){
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n){
+      showSlides(slideIndex = n);
+    }
+    function showSlides(n){
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      //var dots = document.getElementsByClassName("demo");
+      // var captionText = document.getElementById("caption");
+      if(n > slides.length){ slideIndex = 1 }
+      if(n < 1) { slideIndex = slides.length }
+      for(i=0; i < slides.length; i++){
+        slides[i].style.display = "none";
+      }
+      // for(i=0; i < dots.length; i++){
+      //   dots[i].className = dots[i].className.replace(" active", "");
+      // }
+      slides[slideIndex-1].style.display = "block";
+      //dots[slideIndex-1].className += " active";
+      // captionText.innerHTML = this.alt;
+    }
+  </script>
+</body>
+</html>
